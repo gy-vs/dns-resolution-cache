@@ -1,0 +1,32 @@
+{
+  "name": "async-dns-cache",
+  "version": "0.1.0",
+  "description": "Embeddable async DNS resolution cache with single-flight coalescing, per-record TTL, stale-while-revalidate and bounded capacity. Resolver and clock are injected.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && node --test .build/test/",
+    "prepack": "npm run build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "typescript": "^5.5.0"
+  }
+}
